@@ -1,0 +1,66 @@
+<div class="content-wrapper" style="min-height: 496.2px;">
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+<!--    heroe uno-->
+    <div class="col" *ngFor="let heroe of arregloHeroe let i = index">
+      <div class="card h-100" >
+        <img [src]="heroe.foto" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{heroe.nombre}}</h5>
+          <p class="card-text">Alias: {{heroe.alias}}</p>
+          <p class="card-text">Especie: {{heroe.especie}}</p>
+          <p class="card-text">Nacionalidad: {{heroe.nacionalidad}}</p>
+          <p class="card-text">Fecha de Nacimiento: {{heroe.fechaNacimiento}}</p>
+          <p class="card-text">Frase: {{heroe.frase}}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-outline-primary margenIzq" (click)="incrementarMeGusta(i)">
+            <label>
+              {{contadorMeGusta[i]}}
+            </label>
+            Me gusta
+          </button>
+
+          <button class="btn btn-outline-danger margenDer" (click)="incrementarNoMeGusta(i)">
+            <label>
+              {{contadorNoMeGusta[i]}}
+            </label>
+            No me gusta
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card h-100">
+      <button class="btn-outline-primary margen" (click)="getMayor()">Heroe con mas me gusta</button>
+      <button class="btn btn-outline-danger margen" (click)="getMenor()">Heroe con mas no me gusta</button>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="card h-100" *ngIf="mostrar">
+      <img [src]="heroeMax.foto" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{heroeMax.nombre}}</h5>
+        <p class="card-text">Alias: {{heroeMax.alias}}</p>
+        <p class="card-text">Especie: {{heroeMax.especie}}</p>
+        <p class="card-text">Nacionalidad: {{heroeMax.nacionalidad}}</p>
+        <p class="card-text">Fecha de Nacimiento: {{heroeMax.fechaNacimiento}}</p>
+        <p class="card-text">Frase: {{heroeMax.frase}}</p>
+      </div>
+    </div>
+    <div class="card h-100" *ngIf="mostrar2">
+      <img [src]="heroeMin.foto" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{heroeMin.nombre}}</h5>
+        <p class="card-text">Alias: {{heroeMin.alias}}</p>
+        <p class="card-text">Especie: {{heroeMin.especie}}</p>
+        <p class="card-text">Nacionalidad: {{heroeMin.nacionalidad}}</p>
+        <p class="card-text">Fecha de Nacimiento: {{heroeMin.fechaNacimiento}}</p>
+        <p class="card-text">Frase: {{heroeMin.frase}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+

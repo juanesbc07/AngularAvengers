@@ -1,0 +1,14 @@
+.margenIzq{
+  margin-left: 10%;
+  margin-right: 8%;
+}
+.margenDer{
+  margin-right: 10%;
+}
+
+.margen{
+  margin-left: 0.5px;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  font-size: 150%;
+}
